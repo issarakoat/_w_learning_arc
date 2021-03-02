@@ -15,6 +15,7 @@ export default (props) => {
       </head>
       <body>
         <h1>Welcome to Fusion!</h1>
+        <p>Just testing some stuff!</p>
         <div id='fusion-app' className='col-12'>
           {props.children}
         </div>
