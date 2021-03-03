@@ -15,7 +15,7 @@ class EditableHeadline extends Component {
 
     return (
       <>
-        <h1>Yo yo test 123</h1>
+        <h2>Should be editable!</h2>
         <h1 {...this.props.editableContent(content, {
           headline: 'headlines.basic',
           subheadlines: 'subheadlines.basic',

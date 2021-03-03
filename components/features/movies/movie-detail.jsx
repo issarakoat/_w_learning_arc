@@ -27,7 +27,7 @@ class MovieDetail extends Component {
 
     return (
       <div className="movie-detail col-sm-12 col-md-8">
-        <h2>Getting confused now</h2>
+        <h2>Movie Detail</h2>
         {Title && <h1>{Title}</h1>}
         {Director && (
           <p>
@@ -64,11 +64,10 @@ class MovieDetail extends Component {
     );
   }
 }
-
 MovieDetail.label = "Movie Detail";
-
 export default MovieDetail;
 
+// #######################################################################################
 // import React, { useState } from 'react'
 // import Consumer from 'fusion:consumer'
 
@@ -95,7 +94,5 @@ export default MovieDetail;
 //     <p><strong>Year:</strong> 1993</p>
 //     <img src='https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg' alt={`Poster for Jurassic Park`} />
 //   </div>
-
 // MovieDetail.label = 'Movie Detail'
-
 // export default MovieDetail
