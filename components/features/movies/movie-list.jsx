@@ -21,16 +21,16 @@ const MovieList = (props) => {
   return (
     <Fragment>
       <h2>Movies</h2>
-      <div className=" container row">
+      <div className="row">
         {movieList &&
           movieList.map((movie, idx) => (
-            <div className='col-6'>
+            <div className='col-4'>
               <div key={`movie-${idx}`}>
                 <h4>{movie.Title}</h4>
                 <p>
                   <strong>Year:</strong> {movie.Year}
                 </p>
-                <img src={movie.Poster} />
+                <img style={{width:'60%'}} src={movie.Poster} />
               </div>
             </div>
           ))}
