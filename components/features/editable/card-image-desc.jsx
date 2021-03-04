@@ -5,12 +5,12 @@ const CardImageDesc = ({ customFields }) => {
   const { title, imgPath, desc, url } = customFields;
 
   return (
-    <div className="card" style={{ width: "50%" }}>
+    <div className="card" style={{ width: "100%" }}>
       <div className="container">
       {imgPath? 
         <img
           className="card-img-top"
-          style={{ width: "100%" }}
+          style={{ height: "500px" }}
           src={imgPath}
           alt="Card image cap"
         />

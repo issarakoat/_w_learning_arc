@@ -1,6 +1,8 @@
+/*  /components/layouts/article-right-rail.jsx  */
+
 import React from 'react'
 
-const ArticleRightRail = (props) => {
+const MaterialUiLayout = (props) => {
   return (
     <div className='row'>
       <header className='col-12 fixed-on-small'>
@@ -24,6 +26,6 @@ const ArticleRightRail = (props) => {
   )
 }
 
-ArticleRightRail.sections = ['header', 'main', 'sidebar', 'footer']
+MaterialUiLayout.sections = ['header', 'main', 'sidebar', 'footer']
 
-export default ArticleRightRail
+export default MaterialUiLayout

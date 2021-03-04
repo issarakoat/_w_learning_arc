@@ -40,7 +40,6 @@ export default (props) => {
         ></script>
       </head>
       <body>
-        <h1 className="container">Hello Tom!!</h1>
         <div id="fusion-app" className="col-12">
           {props.children}
         </div>
