@@ -3,7 +3,7 @@ import Content, { useContent } from "fusion:content";
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 
-const MovieList = (props) => {
+const MovieListI = (props) => {
   const movies = useContent({
     source: "movie-search",
     query: { movieQuery: "Jurassic" },
@@ -39,4 +39,4 @@ const MovieList = (props) => {
   );
 };
 
-export default MovieList;
+export default MovieListI;

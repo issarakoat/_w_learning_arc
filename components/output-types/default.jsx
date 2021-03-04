@@ -10,6 +10,8 @@ export default (props) => {
         <props.MetaTags />
         <props.Libs />
         <props.CssLinks />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link
           rel="icon"
           type="image/x-icon"
