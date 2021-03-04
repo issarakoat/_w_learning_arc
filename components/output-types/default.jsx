@@ -1,6 +1,7 @@
 /*    /components/output-types/default.jsx    */
 
 import React from "react";
+import { OMDB_API_KEY } from "fusion:environment";
 
 export default (props) => {
   return (
@@ -40,6 +41,7 @@ export default (props) => {
         ></script>
       </head>
       <body>
+        <h1>test123 {OMDB_API_KEY}</h1>
         <div id="fusion-app" className="col-12">
           {props.children}
         </div>
