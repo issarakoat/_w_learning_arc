@@ -75,7 +75,7 @@ class MovieListII extends Component {
 
     return (
       <Fragment>
-      <h2>Movies</h2>
+      <h2 className='red-text'>Movies</h2>
       <div className="row">
         {movies &&
           movies.map((movie, idx) => (

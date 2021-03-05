@@ -8,8 +8,6 @@ import getProperties from 'fusion:properties'
 class MyComponent extends Component {
   render() {
     const siteVars = getProperties(this.props.arcSite)
-    console.log(siteVars.twitter)
-    console.log(siteVars.meEmail)
     return (
       <div>
         <h2>my-group _ my-component.jsx</h2>
