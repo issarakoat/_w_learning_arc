@@ -17,6 +17,19 @@ class MovieListII extends Component {
     this.fetch();
   }
 
+  fetchTheaters () {
+    // Extract the `contentService` and `contentConfigValues` from the `theaterConfig` custom field, just like before
+    const { contentService, contentConfigValues } = this.props.customFields.theaterConfig;
+
+    // Here, we're using the `fetchContent` API to fetch our list of theaters and set them into component state
+    this.fetchContent({
+      theaters: {
+        source: contentService,
+        query: contentConfigValues
+      }
+    })
+  }
+
   fetch() {
     // We're destructuring the `contentService` and `contentConfigValues` keys out of the `movieListConfig` prop inside `this.props.customFields`...
     const {
@@ -55,6 +68,7 @@ class MovieListII extends Component {
     // Concatenate the lists of the movies and filter duplicates - this would ensure that
     // a multiple clicks on the 'More' button wouldn't cause issues with incomplete and out-of-order fetches from
     // network issues
+    const { theaters } = this.state
     const movies = []
       .concat(...this.state.movies.pages)
       .filter((movie) => movie);
@@ -85,10 +99,14 @@ class MovieListII extends Component {
 
 MovieListII.propTypes = {
   customFields: PropTypes.shape({
-    // We're using the Fusion-specific PropType `contentConfig` and passing it the name(s) of the GraphQL schemas this component will work with
-    movieListConfig: PropTypes.contentConfig("movies").tag({
-      group: "Configure Content",
+    // Make sure that configure content group is above any other
+    movieListConfig: PropTypes.contentConfig('movies').tag({
+      group: 'Configure Content'
     }),
-  }),
-};
+    // Adding a new `contentConfig` for fetching movie theaters
+    theaterConfig: PropTypes.contentConfig('theaters').tag({
+      group: 'Configure Content'
+    })
+  })
+}
 export default MovieListII;
