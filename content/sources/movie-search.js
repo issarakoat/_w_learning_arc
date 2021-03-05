@@ -1,5 +1,3 @@
-/*  /content/sources/movie-search.js  */
-
 import { OMDB_API_KEY } from 'fusion:environment'
 
 const resolve = (query) => {
