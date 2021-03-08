@@ -17,17 +17,20 @@ class MovieListII extends Component {
     this.fetch();
   }
 
-  fetchTheaters () {
+  fetchTheaters() {
     // Extract the `contentService` and `contentConfigValues` from the `theaterConfig` custom field, just like before
-    const { contentService, contentConfigValues } = this.props.customFields.theaterConfig;
+    const {
+      contentService,
+      contentConfigValues,
+    } = this.props.customFields.theaterConfig;
 
     // Here, we're using the `fetchContent` API to fetch our list of theaters and set them into component state
     this.fetchContent({
       theaters: {
         source: contentService,
-        query: contentConfigValues
-      }
-    })
+        query: contentConfigValues,
+      },
+    });
   }
 
   fetch() {
@@ -65,34 +68,40 @@ class MovieListII extends Component {
   }
 
   render() {
+    // Extract the `hideOnMobile` value from props.displayProperties, which we default to an empty object
+    const { hideOnMobile } = this.props.displayProperties || {};
+    // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
+    if (hideOnMobile) return null;
     // Concatenate the lists of the movies and filter duplicates - this would ensure that
     // a multiple clicks on the 'More' button wouldn't cause issues with incomplete and out-of-order fetches from
     // network issues
-    const { theaters } = this.state
+    const { theaters } = this.state;
     const movies = []
       .concat(...this.state.movies.pages)
       .filter((movie) => movie);
 
     return (
       <Fragment>
-      <h2 className='red-text'>Movies</h2>
-      <div className="row">
-        {movies &&
-          movies.map((movie, idx) => (
-            <div className='col-4'>
-              <div key={`movie-${idx}`}>
-                <h4>{movie.Title}</h4>
-                <p>
-                  <strong>Year:</strong> {movie.Year}
-                </p>
-                <img style={{width:'70%'}} src={movie.Poster} />
+        <h2 className="red-text">Movies</h2>
+        <div className="row">
+          {movies &&
+            movies.map((movie, idx) => (
+              <div className="col-4">
+                <div key={`movie-${idx}`}>
+                  <h4>{movie.Title}</h4>
+                  <p>
+                    <strong>Year:</strong> {movie.Year}
+                  </p>
+                  <img style={{ width: "70%" }} src={movie.Poster} />
+                </div>
               </div>
-            </div>
-          ))}
-      </div>
-      <br/>
-      <button className='btn btn-info btn-lg' onClick={this.fetch}>More</button>
-    </Fragment>
+            ))}
+        </div>
+        <br />
+        <button className="btn btn-info btn-lg" onClick={this.fetch}>
+          More
+        </button>
+      </Fragment>
     );
   }
 }
@@ -100,13 +109,13 @@ class MovieListII extends Component {
 MovieListII.propTypes = {
   customFields: PropTypes.shape({
     // Make sure that configure content group is above any other
-    movieListConfig: PropTypes.contentConfig('movies').tag({
-      group: 'Configure Content'
+    movieListConfig: PropTypes.contentConfig("movies").tag({
+      group: "Configure Content",
     }),
     // Adding a new `contentConfig` for fetching movie theaters
-    theaterConfig: PropTypes.contentConfig('theaters').tag({
-      group: 'Configure Content'
-    })
-  })
-}
+    theaterConfig: PropTypes.contentConfig("theaters").tag({
+      group: "Configure Content",
+    }),
+  }),
+};
 export default MovieListII;
