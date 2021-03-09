@@ -4,7 +4,7 @@ import Consumer from "fusion:consumer";
 import React, { Fragment, Component } from "react";
 
 @Consumer
-class MovieListII extends Component {
+class MovieListIII extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -108,7 +108,7 @@ class MovieListII extends Component {
   }
 }
 
-MovieListII.propTypes = {
+MovieListIII.propTypes = {
   customFields: PropTypes.shape({
     // Make sure that configure content group is above any other
     movieListConfig: PropTypes.contentConfig("movies").tag({
@@ -120,4 +120,4 @@ MovieListII.propTypes = {
     }),
   }),
 };
-export default MovieListII;
+export default MovieListIII;
