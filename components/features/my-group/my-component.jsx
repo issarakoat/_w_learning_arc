@@ -14,6 +14,7 @@ class MyComponent extends Component {
         <p>Twitter: {siteVars.twitter}</p>
         <p>Email: {siteVars.contactEmail}</p>
         <p>MeEmail: {siteVars.meEmail}</p>
+        {/* <p>My OMDB_API_KEY: {siteVars.omdb_api_key}</p> */}
         {siteVars.twitter && <a href={`https://twitter.com/${siteVars.twitter}`}>Twitter</a>}
         {siteVars.contactEmail && <a href={`mailto:${siteVars.contactEmail}`}>Contact</a>}
       </div>

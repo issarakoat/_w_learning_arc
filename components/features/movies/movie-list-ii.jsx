@@ -72,7 +72,7 @@ class MovieListII extends Component {
     const { hideOnMobile } = this.props.displayProperties || {};
     console.log('hideOnMobile ' + hideOnMobile)
     // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
-    if (hideOnMobile) return null;
+    if (hideOnMobile) return <h1>Hide since it is on Mobile</h1>;
     // Concatenate the lists of the movies and filter duplicates - this would ensure that
     // a multiple clicks on the 'More' button wouldn't cause issues with incomplete and out-of-order fetches from
     // network issues
