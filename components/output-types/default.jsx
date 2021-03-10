@@ -42,7 +42,7 @@ export default (props) => {
         ></script>
       </head>
       <body>
-        <h1>test123 {OMDB_API_KEY}</h1>
+        {/* <h1>test123 {OMDB_API_KEY}</h1> */}
         <div id="fusion-app" className="col-12">
           {props.children}
         </div>
