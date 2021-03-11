@@ -71,7 +71,6 @@ class MovieListThirdParty extends Component {
   render() {
     // Extract the `hideOnMobile` value from props.displayProperties, which we default to an empty object
     const { hideOnMobile } = this.props.displayProperties || {};
-    console.log('hideOnMobile ' + hideOnMobile)
     // Before anything else, if hideOnMobile is true, we return null so nothing else gets rendered
     if (hideOnMobile) return <h1>Hide since it is on Mobile</h1>;
     // Concatenate the lists of the movies and filter duplicates - this would ensure that
